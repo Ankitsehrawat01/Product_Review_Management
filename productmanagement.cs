@@ -18,6 +18,19 @@ namespace ProductReviewManagement
                                   products.rating + " | " + products.Review + " | " + products.Islike);
             }
         }
+        public static void GetData(List<product> productreview)
+        {
+            var productdata = from products in productreview
+                              where (products.ProductID == 1 && products.rating > 3) ||
+                              (products.ProductID == 4 && products.rating > 3) ||
+                              (products.ProductID == 9 && products.rating > 3)
+                              select products;
+            foreach (var products in productdata)
+            {
+                Console.WriteLine(products.ProductID + " | " + products.Userid + " | " +
+                                  products.rating + " | " + products.Review + " | " + products.Islike);
+            }
+        }
     }
 }
 

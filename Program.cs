@@ -23,7 +23,8 @@ namespace ProductReviewManagement
             while(check)
             {
                 Console.WriteLine("1) Display All The Product Details\n" +
-                                  "2) Retrieve top 3 records from the list who’s rating is high");
+                                  "2) Retrieve top 3 records from the list who’s rating is high\n" +
+                                  "3) Retrieve all record from the list who’s rating are greater then 3 and productID is 1 or 4 or 9");
                 int option = int.Parse(Console.ReadLine());
                 switch(option)
                 {
@@ -33,10 +34,18 @@ namespace ProductReviewManagement
                             Console.WriteLine("------------------------------------");
                             Console.WriteLine(products.ProductID + " | " + products.Userid + " | " + 
                                               products.rating + " | " + products.Review + " | " + products.Islike);
+                            Console.WriteLine("------------------------------------");
                         }
                         break;
                     case 2:
+                        Console.WriteLine("------------------------------------");
                         productmanagement.Top3Records(productreviewlist);
+                        Console.WriteLine("------------------------------------");
+                        break;
+                    case 3:
+                        Console.WriteLine("------------------------------------");
+                        productmanagement.GetData(productreviewlist);
+                        Console.WriteLine("------------------------------------");
                         break;
                 }
             }
