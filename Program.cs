@@ -24,7 +24,8 @@ namespace ProductReviewManagement
             {
                 Console.WriteLine("1) Display All The Product Details\n" +
                                   "2) Retrieve top 3 records from the list who’s rating is high\n" +
-                                  "3) Retrieve all record from the list who’s rating are greater then 3 and productID is 1 or 4 or 9");
+                                  "3) Retrieve all record from the list who’s rating are greater then 3 and productID is 1 or 4 or 9\n" +
+                                  "4) Retrieve count of review present for each productID");
                 int option = int.Parse(Console.ReadLine());
                 switch(option)
                 {
@@ -45,6 +46,11 @@ namespace ProductReviewManagement
                     case 3:
                         Console.WriteLine("------------------------------------");
                         productmanagement.GetData(productreviewlist);
+                        Console.WriteLine("------------------------------------");
+                        break;
+                    case 4:
+                        Console.WriteLine("------------------------------------");
+                        productmanagement.GetCount(productreviewlist);
                         Console.WriteLine("------------------------------------");
                         break;
                 }
