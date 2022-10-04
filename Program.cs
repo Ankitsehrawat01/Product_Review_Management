@@ -26,7 +26,8 @@ namespace ProductReviewManagement
                                   "2) Retrieve top 3 records from the list who’s rating is high\n" +
                                   "3) Retrieve all record from the list who’s rating are greater then 3 and productID is 1 or 4 or 9\n" +
                                   "4) Retrieve count of review present for each productID\n" +
-                                  "5) Retrieve only productId and review from the list for all records");
+                                  "5) Retrieve only productId and review from the list for all records\n" +
+                                  "6) Skip Top 5 records from list and Display others");
                 int option = int.Parse(Console.ReadLine());
                 switch(option)
                 {
@@ -57,6 +58,11 @@ namespace ProductReviewManagement
                     case 5:
                         Console.WriteLine("------------------------------------");
                         productmanagement.GetProductIDandReview(productreviewlist);
+                        Console.WriteLine("------------------------------------");
+                        break;
+                    case 6:
+                        Console.WriteLine("------------------------------------");
+                        productmanagement.SkipTop5(productreviewlist);
                         Console.WriteLine("------------------------------------");
                         break;
                 }
