@@ -15,7 +15,7 @@ namespace ProductReviewManagement
                  new product() { ProductID = 5, Userid = 5, rating = 1.0, Review = "Excellent", Islike = true },
                  new product() { ProductID = 6, Userid = 6, rating = 2.5, Review = "Wrost", Islike = false },
                  new product() { ProductID = 7, Userid = 7, rating = 3.5, Review = "Good", Islike = true },
-                 new product() { ProductID = 8, Userid = 8, rating = 2.8, Review = "Bad", Islike = true },
+                 new product() { ProductID = 1, Userid = 8, rating = 2.8, Review = "Bad", Islike = true },
                  new product() { ProductID = 9, Userid = 9, rating = 5.0, Review = "Very Good", Islike = false },
                  new product() { ProductID = 10, Userid = 10, rating = 4.5, Review = "Excellent", Islike = true }
             };
@@ -25,7 +25,8 @@ namespace ProductReviewManagement
                 Console.WriteLine("1) Display All The Product Details\n" +
                                   "2) Retrieve top 3 records from the list who’s rating is high\n" +
                                   "3) Retrieve all record from the list who’s rating are greater then 3 and productID is 1 or 4 or 9\n" +
-                                  "4) Retrieve count of review present for each productID");
+                                  "4) Retrieve count of review present for each productID\n" +
+                                  "5) Retrieve only productId and review from the list for all records");
                 int option = int.Parse(Console.ReadLine());
                 switch(option)
                 {
@@ -51,6 +52,11 @@ namespace ProductReviewManagement
                     case 4:
                         Console.WriteLine("------------------------------------");
                         productmanagement.GetCount(productreviewlist);
+                        Console.WriteLine("------------------------------------");
+                        break;
+                    case 5:
+                        Console.WriteLine("------------------------------------");
+                        productmanagement.GetProductIDandReview(productreviewlist);
                         Console.WriteLine("------------------------------------");
                         break;
                 }
